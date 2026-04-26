@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/armchair.svg" width="120" alt="Logo de Asientos" />
-  <h1>SiGIC Seating Map 🪑</h1>
+  <h1>SiGIC Seating Map</h1>
   <p><strong>Una experiencia premium, interactiva y accesible para la gestión de anfiteatros institucionales.</strong></p>
 
   [![NPM Version](https://img.shields.io/npm/v/@jcancelo/mapa-asientos-sigic?style=for-the-badge&color=800020)](https://www.npmjs.com/package/@jcancelo/mapa-asientos-sigic)
@@ -8,19 +8,19 @@
   [![React Compatible](https://img.shields.io/badge/React-18%2B-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
 
   <p>
-    <a href="#-sobre-el-proyecto">Sobre el Proyecto</a> •
-    <a href="#-características">Características</a> •
-    <a href="#-instalación">Instalación</a> •
-    <a href="#%EF%B8%8F-demo">Demo</a> •
-    <a href="#-guía-rápida">Uso</a>
+    <a href="#sobre-el-proyecto">Sobre el Proyecto</a> •
+    <a href="#características">Características</a> •
+    <a href="#instalación">Instalación</a> •
+    <a href="#demo">Demo</a> •
+    <a href="#guía-rápida">Uso</a>
   </p>
 </div>
 
 ---
 
-## 👋 Sobre el Proyecto
+## Sobre el Proyecto
 
-¡Hola! Soy **Julian Cancelo**, desarrollador e investigador en el **Instituto Tecnológico Beltrán**. 
+Soy **Julian Cancelo**, desarrollador e investigador en el **Instituto Tecnológico Beltrán**. 
 
 Desarrollé esta librería como parte del ecosistema **SiGIC (Sistema de Gestión Institucional de Ceremonias)** en 2026. Mi objetivo principal fue resolver un problema complejo: crear un mapa interactivo de asientos que no solo fuera visualmente deslumbrante y "premium", sino que también fuera **100% accesible** (WCAG 2.1) y extremadamente fácil de integrar para otros desarrolladores.
 
@@ -28,18 +28,18 @@ A diferencia de otras librerías genéricas, este mapa está diseñado pensando 
 
 ---
 
-## ✨ Características
+## Características
 
-- 🎨 **Estética Premium**: Diseño estilo "Bento", soporte nativo para Modo Claro/Oscuro y animaciones fluidas (glassmorphism).
-- ♿ **Accesibilidad Total (WCAG 2.1)**: Soporte completo para navegación por teclado (flechas) y soporte para lectores de pantalla.
-- 🏢 **Arquitectura Multinivel**: Soporta visualización de plateas bajas, palcos altos o cualquier estructura personalizada.
-- 🔍 **Controles de Zoom**: Pan & Zoom integrados para anfiteatros masivos.
-- 🎭 **Gestión de Roles**: Colores e íconos automáticos para *Egresados, Autoridades, Discapacitados, Reservados y Disponibles*.
-- 🛡️ **Seguridad por Diseño**: Modo "Solo Lectura" ideal para pantallas de monitoreo en la portería o entrada del evento.
+- **Estética Premium**: Diseño estilo "Bento", soporte nativo para Modo Claro/Oscuro y animaciones fluidas (glassmorphism).
+- **Accesibilidad Total (WCAG 2.1)**: Soporte completo para navegación por teclado (flechas) y soporte para lectores de pantalla.
+- **Arquitectura Multinivel**: Soporta visualización de plateas bajas, palcos altos o cualquier estructura personalizada.
+- **Controles de Zoom**: Pan & Zoom integrados para anfiteatros masivos.
+- **Gestión de Roles**: Colores e íconos automáticos para *Egresados, Autoridades, Discapacitados, Reservados y Disponibles*.
+- **Seguridad por Diseño**: Modo "Solo Lectura" ideal para pantallas de monitoreo en la portería o entrada del evento.
 
 ---
 
-## 🚀 Instalación
+## Instalación
 
 La librería requiere `react`, `react-dom` y `lucide-react` (para su iconografía moderna).
 
@@ -56,7 +56,7 @@ import '@jcancelo/mapa-asientos-sigic/dist/style.css';
 
 ---
 
-## 🖥️ Demo
+## Demo
 
 Prueba la librería en vivo directamente desde tu navegador:
 
@@ -64,7 +64,7 @@ Prueba la librería en vivo directamente desde tu navegador:
 
 ---
 
-## 📖 Guía Rápida
+## Guía Rápida
 
 Aquí tienes el ejemplo mínimo para renderizar tu primer anfiteatro:
 
@@ -124,7 +124,7 @@ export default function MiCeremonia() {
 
 ---
 
-## 🛠️ API de Componentes
+## API de Componentes
 
 ### `<MapaAsientos />`
 
@@ -141,11 +141,11 @@ export default function MiCeremonia() {
 
 ---
 
-## 🤝 Contribuir y Soporte
+## Contribuir y Soporte
 
 Si estás desarrollando en el Instituto Beltrán o simplemente integraste esta herramienta en tu proyecto y tienes dudas, siéntete libre de abrir un **Issue** en el repositorio.
 
-Desarrollado con pasión ❤️ y café ☕ por **Julian Cancelo**.
+Desarrollado por **Julian Cancelo**.
 
 <div align="center">
   <br />
