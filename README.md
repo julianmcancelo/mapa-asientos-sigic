@@ -58,9 +58,9 @@ import '@jcancelo/mapa-asientos-sigic/dist/style.css';
 
 ## 🖥️ Demo
 
-> 💡 **Nota sobre demos en NPM**: NPM no ejecuta código interactivo en su página, pero puedes probar esta librería copiando el código de abajo en un [CodeSandbox](https://codesandbox.io/) o [StackBlitz](https://stackblitz.com/).
+Prueba la librería en vivo directamente desde tu navegador:
 
-*(Próximamente agregaré un GIF interactivo aquí mostrando el mapa en funcionamiento).*
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/asientos-gestor)
 
 ---
 
