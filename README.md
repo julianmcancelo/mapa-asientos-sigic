@@ -22,6 +22,8 @@
 
 Soy **Julian Cancelo**, desarrollador e investigador en el **Instituto Tecnológico Beltrán**. 
 
+Actualmente cursando/egresado de la carrera **Tecnicatura Superior en Desarrollo de Software** y la **Tecnicatura Superior en Analista de Sistemas**.
+
 Desarrollé esta librería como parte del ecosistema **SiGIC (Sistema de Gestión Institucional de Ceremonias)** en 2026. Mi objetivo principal fue resolver un problema complejo: crear un mapa interactivo de asientos que no solo fuera visualmente deslumbrante y "premium", sino que también fuera **100% accesible** (WCAG 2.1) y extremadamente fácil de integrar para otros desarrolladores.
 
 A diferencia de otras librerías genéricas, este mapa está diseñado pensando en **eventos académicos y protocolares**: maneja múltiples pisos, asignación de roles (autoridades, egresados, personas con movilidad reducida) y soporta navegación nativa por teclado.
@@ -150,5 +152,5 @@ Desarrollado por **Julian Cancelo**.
 <div align="center">
   <br />
   <a href="https://github.com/julianmcancelo">GitHub</a> • 
-  <a href="mailto:jcancelo@itbeltran.edu.ar">jcancelo@itbeltran.edu.ar</a>
+  <a href="mailto:jcancelo.dev@gmail.com">jcancelo.dev@gmail.com</a>
 </div>
