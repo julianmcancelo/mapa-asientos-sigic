@@ -1,0 +1,50 @@
+{
+  "name": "@jcancelo/mapa-asientos-sigic",
+  "version": "2.0.1",
+  "description": "Librería profesional y accesible para visualización interactiva de mapas de asientos en eventos institucionales.",
+  "main": "dist/mapa-asientos.umd.js",
+  "module": "dist/mapa-asientos.es.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/mapa-asientos.es.js",
+      "require": "./dist/mapa-asientos.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "types",
+    "scripts"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "postinstall": "node scripts/bienvenida.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "seating-chart",
+    "mapa-asientos",
+    "anfiteatro",
+    "accessibility",
+    "sigic",
+    "dark-mode"
+  ],
+  "author": "Julian Cancelo <jcancelo@itbeltran.edu.ar>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcancelo/mapa-asientos-sigic.git"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "lucide-react": ">=0.200.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.3.9"
+  }
+}

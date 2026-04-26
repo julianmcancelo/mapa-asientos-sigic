@@ -1,0 +1,660 @@
+/* ============================================================
+   @jcancelo/mapa-asientos-sigic — Design System v2.0.0
+   Sistema de estilos puro CSS con variables, animaciones,
+   dark mode, responsive y accesibilidad.
+   Autor: Julian Cancelo — Instituto Tecnológico Beltrán 2026
+   ============================================================ */
+
+/* ── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ── Variables — Tema Claro (default) ─────────────────────── */
+.sigic-wrapper {
+  --sigic-font:           'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --sigic-radius-seat:    10px;
+  --sigic-radius-map:     28px;
+  --sigic-seat-w:         38px;
+  --sigic-seat-h:         44px;
+  --sigic-gap-asientos:   6px;
+  --sigic-gap-filas:      8px;
+
+  /* Colores del mapa */
+  --sigic-mapa-bg:        #ffffff;
+  --sigic-mapa-border:    rgba(15,23,42,0.07);
+  --sigic-mapa-shadow:    0 12px 48px rgba(15,23,42,0.08), 0 2px 8px rgba(15,23,42,0.04);
+
+  /* Escenario */
+  --sigic-escenario-bg:   #0f172a;
+  --sigic-escenario-text: rgba(255,255,255,0.25);
+  --sigic-escenario-glow: rgba(99,102,241,0.15);
+
+  /* Etiquetas de fila */
+  --sigic-fila-label:     #cbd5e1;
+
+  /* ─ Roles ─ */
+  --sigic-disponible-bg:     #f8fafc;
+  --sigic-disponible-fg:     #cbd5e1;
+  --sigic-disponible-border: #e2e8f0;
+  --sigic-disponible-hover-border: #7dd3fc;
+  --sigic-disponible-hover-fg:     #0ea5e9;
+
+  --sigic-egresado-bg:    linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --sigic-egresado-fg:    #ffffff;
+  --sigic-egresado-shadow: rgba(99,102,241,0.35);
+
+  --sigic-autoridad-bg:   #0f172a;
+  --sigic-autoridad-fg:   #64748b;
+  --sigic-autoridad-border: #1e293b;
+
+  --sigic-discapacitado-bg:    linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  --sigic-discapacitado-fg:    #ffffff;
+  --sigic-discapacitado-shadow: rgba(168,85,247,0.35);
+
+  --sigic-reservado-bg:   linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+  --sigic-reservado-fg:   #ffffff;
+  --sigic-reservado-shadow: rgba(245,158,11,0.35);
+
+  --sigic-bloqueado-bg:   #f1f5f9;
+  --sigic-bloqueado-fg:   #e2e8f0;
+
+  --sigic-seleccionado-bg:     linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+  --sigic-seleccionado-fg:     #ffffff;
+  --sigic-seleccionado-shadow: rgba(99,102,241,0.5);
+  --sigic-seleccionado-ring:   rgba(99,102,241,0.3);
+
+  /* Controles */
+  --sigic-control-bg:     #f1f5f9;
+  --sigic-control-fg:     #475569;
+  --sigic-control-active-bg: #ffffff;
+  --sigic-control-active-fg: #1e293b;
+
+  /* Stats pills */
+  --sigic-pill-radius: 999px;
+}
+
+/* ── Dark Mode ────────────────────────────────────────────── */
+.sigic-wrapper[data-tema="oscuro"] {
+  --sigic-mapa-bg:        #0f172a;
+  --sigic-mapa-border:    rgba(255,255,255,0.06);
+  --sigic-mapa-shadow:    0 12px 48px rgba(0,0,0,0.4);
+
+  --sigic-escenario-bg:   #020617;
+  --sigic-fila-label:     #334155;
+
+  --sigic-disponible-bg:     #1e293b;
+  --sigic-disponible-fg:     #334155;
+  --sigic-disponible-border: #253044;
+  --sigic-disponible-hover-border: #38bdf8;
+  --sigic-disponible-hover-fg:     #38bdf8;
+
+  --sigic-bloqueado-bg:   #0f172a;
+  --sigic-bloqueado-fg:   #1e293b;
+
+  --sigic-control-bg:     #1e293b;
+  --sigic-control-fg:     #94a3b8;
+  --sigic-control-active-bg: #0f172a;
+  --sigic-control-active-fg: #f1f5f9;
+}
+
+/* ── Animaciones ──────────────────────────────────────────── */
+@keyframes sigic-map-entrada {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+@keyframes sigic-pulse-selected {
+  0%, 100% { box-shadow: 0 0 0 0   var(--sigic-seleccionado-ring), 0 6px 20px var(--sigic-seleccionado-shadow); }
+  50%       { box-shadow: 0 0 0 6px transparent,                     0 6px 20px var(--sigic-seleccionado-shadow); }
+}
+
+@keyframes sigic-aparecer {
+  from { opacity: 0; transform: scale(0.65); }
+  to   { opacity: 1; transform: scale(1);    }
+}
+
+@keyframes sigic-nivel-fade {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+@keyframes sigic-aviso-entrada {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ── Wrapper ──────────────────────────────────────────────── */
+.sigic-wrapper {
+  font-family: var(--sigic-font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  animation: sigic-map-entrada 0.5s cubic-bezier(0.4,0,0.2,1) both;
+}
+
+/* ── Cabecera ─────────────────────────────────────────────── */
+.sigic-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* ── Selector de Nivel ────────────────────────────────────── */
+.sigic-nivel-selector {
+  display: inline-flex;
+  align-items: center;
+  background: var(--sigic-control-bg);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 2px;
+}
+
+.sigic-nivel-selector__icono {
+  color: #94a3b8;
+  margin: 0 4px 0 6px;
+  flex-shrink: 0;
+}
+
+.sigic-nivel-tab {
+  font-family: var(--sigic-font);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--sigic-control-fg);
+  transition: all 0.2s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.sigic-nivel-tab:hover {
+  background: rgba(0,0,0,0.04);
+  color: var(--sigic-control-active-fg);
+}
+
+.sigic-nivel-tab--activo {
+  background: var(--sigic-control-active-bg);
+  color: var(--sigic-control-active-fg);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.04);
+}
+
+.sigic-nivel-tab__indicador {
+  display: block;
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, #6366f1, #0ea5e9);
+}
+
+/* ── Controles de Zoom ────────────────────────────────────── */
+.sigic-zoom {
+  display: inline-flex;
+  align-items: center;
+  background: var(--sigic-control-bg);
+  border-radius: 10px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.sigic-zoom__btn {
+  font-family: var(--sigic-font);
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--sigic-control-fg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.sigic-zoom__btn:hover:not(:disabled) {
+  background: var(--sigic-control-active-bg);
+  color: #6366f1;
+}
+
+.sigic-zoom__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.sigic-zoom__valor {
+  font-family: var(--sigic-font);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0 10px;
+  color: var(--sigic-control-fg);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.sigic-zoom__valor:hover {
+  background: var(--sigic-control-active-bg);
+  color: #6366f1;
+}
+
+/* ── Aviso de Límite ──────────────────────────────────────── */
+.sigic-aviso-limite {
+  font-family: var(--sigic-font);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #d97706;
+  background: rgba(245,158,11,0.08);
+  border: 1px solid rgba(245,158,11,0.2);
+  border-radius: 8px;
+  padding: 6px 14px;
+  animation: sigic-aviso-entrada 0.25s ease both;
+}
+
+/* ── Mapa ─────────────────────────────────────────────────── */
+.sigic-mapa {
+  background: var(--sigic-mapa-bg);
+  border-radius: var(--sigic-radius-map);
+  border: 1px solid var(--sigic-mapa-border);
+  box-shadow: var(--sigic-mapa-shadow);
+  padding: 36px 40px 40px;
+  overflow: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.sigic-mapa__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Escenario ────────────────────────────────────────────── */
+.sigic-escenario {
+  width: 100%;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.sigic-escenario__barra {
+  height: 22px;
+  background: var(--sigic-escenario-bg);
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sigic-escenario__texto {
+  font-family: var(--sigic-font);
+  font-size: 8px;
+  color: var(--sigic-escenario-text);
+  font-weight: 800;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+}
+
+.sigic-escenario__sombra {
+  height: 16px;
+  background: radial-gradient(ellipse at 50% 0%, var(--sigic-escenario-glow) 0%, transparent 70%);
+}
+
+/* ── Grilla ───────────────────────────────────────────────── */
+.sigic-grilla {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sigic-gap-filas);
+  outline: none;
+  animation: sigic-nivel-fade 0.3s ease both;
+}
+
+.sigic-fila {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sigic-fila__etiqueta {
+  width: 20px;
+  flex-shrink: 0;
+  font-family: var(--sigic-font);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--sigic-fila-label);
+  text-align: center;
+  user-select: none;
+}
+
+.sigic-fila__asientos {
+  display: flex;
+  gap: var(--sigic-gap-asientos);
+}
+
+/* ── Asiento Base ─────────────────────────────────────────── */
+.sigic-seat {
+  width: var(--sigic-seat-w);
+  height: var(--sigic-seat-h);
+  border-radius: var(--sigic-radius-seat);
+  border: 1.5px solid transparent;
+  font-family: var(--sigic-font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  transition: transform 0.18s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.18s ease,
+              background 0.2s ease,
+              border-color 0.2s ease,
+              opacity 0.2s ease;
+  position: relative;
+  animation: sigic-aparecer 0.25s cubic-bezier(0.4,0,0.2,1) both;
+  outline: none;
+}
+
+.sigic-seat:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.sigic-seat__numero {
+  font-size: 7px;
+  font-weight: 700;
+  opacity: 0.55;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+/* ── Rol: Disponible ──────────────────────────────────────── */
+.sigic-seat--disponible {
+  background: var(--sigic-disponible-bg);
+  color: var(--sigic-disponible-fg);
+  border-color: var(--sigic-disponible-border);
+}
+.sigic-seat--disponible:hover:not(:disabled) {
+  border-color: var(--sigic-disponible-hover-border);
+  color: var(--sigic-disponible-hover-fg);
+  box-shadow: 0 4px 16px rgba(14,165,233,0.12);
+  transform: translateY(-2px);
+}
+
+/* ── Rol: Egresado ────────────────────────────────────────── */
+.sigic-seat--egresado {
+  background: var(--sigic-egresado-bg);
+  color: var(--sigic-egresado-fg);
+  box-shadow: 0 3px 10px var(--sigic-egresado-shadow);
+}
+.sigic-seat--egresado:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.07);
+  box-shadow: 0 6px 20px var(--sigic-egresado-shadow);
+}
+
+/* ── Rol: Autoridad ───────────────────────────────────────── */
+.sigic-seat--autoridad {
+  background: var(--sigic-autoridad-bg);
+  color: var(--sigic-autoridad-fg);
+  border-color: var(--sigic-autoridad-border);
+}
+.sigic-seat--autoridad:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.07);
+  color: #94a3b8;
+}
+
+/* ── Rol: Discapacitado ───────────────────────────────────── */
+.sigic-seat--discapacitado {
+  background: var(--sigic-discapacitado-bg);
+  color: var(--sigic-discapacitado-fg);
+  box-shadow: 0 3px 10px var(--sigic-discapacitado-shadow);
+}
+.sigic-seat--discapacitado:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.07);
+  box-shadow: 0 6px 20px var(--sigic-discapacitado-shadow);
+}
+
+/* ── Rol: Reservado ───────────────────────────────────────── */
+.sigic-seat--reservado {
+  background: var(--sigic-reservado-bg);
+  color: var(--sigic-reservado-fg);
+  box-shadow: 0 3px 10px var(--sigic-reservado-shadow);
+}
+.sigic-seat--reservado:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.07);
+  box-shadow: 0 6px 20px var(--sigic-reservado-shadow);
+}
+
+/* ── Rol: Bloqueado ───────────────────────────────────────── */
+.sigic-seat--bloqueado {
+  background: var(--sigic-bloqueado-bg);
+  color: var(--sigic-bloqueado-fg);
+  border-color: transparent;
+  opacity: 0.22;
+  transform: scale(0.82);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Estado: Seleccionado ─────────────────────────────────── */
+.sigic-seat--seleccionado {
+  background: var(--sigic-seleccionado-bg) !important;
+  color: var(--sigic-seleccionado-fg) !important;
+  border-color: transparent !important;
+  transform: translateY(-4px) scale(1.12);
+  animation: sigic-pulse-selected 2.4s ease-in-out infinite;
+  z-index: 5;
+}
+.sigic-seat--seleccionado .sigic-seat__numero { opacity: 0.7; }
+
+/* ── Estado: Foco de teclado ──────────────────────────────── */
+.sigic-seat--foco-teclado:not(.sigic-seat--seleccionado) {
+  outline: 2.5px solid #6366f1;
+  outline-offset: 2px;
+  z-index: 4;
+}
+
+/* ── Estado: Limitado (maxSeleccionados alcanzado) ────────── */
+.sigic-seat--limitado:not(.sigic-seat--bloqueado) {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Tooltip ──────────────────────────────────────────────── */
+.sigic-tooltip-anchor {
+  position: relative;
+  display: inline-flex;
+}
+
+.sigic-tooltip {
+  background: rgba(15,23,42,0.93);
+  color: #f1f5f9;
+  padding: 6px 11px;
+  border-radius: 8px;
+  font-family: var(--sigic-font);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.sigic-tooltip__flecha {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 4px;
+  background: rgba(15,23,42,0.93);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* ── Barra de estadísticas ────────────────────────────────── */
+.sigic-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.sigic-stats__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: var(--sigic-pill-radius);
+  font-family: var(--sigic-font);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  transition: transform 0.15s ease;
+}
+
+.sigic-stats__pill:hover { transform: translateY(-1px); }
+
+.sigic-stats__pill strong { font-weight: 800; }
+.sigic-stats__pill-label  { font-weight: 500; opacity: 0.85; }
+
+.sigic-stats__pill--disponible    { background: rgba(14,165,233,0.08);  color: #0284c7; }
+.sigic-stats__pill--egresado      { background: rgba(99,102,241,0.1);   color: #6366f1; }
+.sigic-stats__pill--autoridad     { background: rgba(15,23,42,0.07);    color: #475569; }
+.sigic-stats__pill--discapacitado { background: rgba(168,85,247,0.1);   color: #9333ea; }
+.sigic-stats__pill--reservado     { background: rgba(245,158,11,0.1);   color: #d97706; }
+.sigic-stats__pill--bloqueado     { background: rgba(148,163,184,0.08); color: #94a3b8; }
+.sigic-stats__pill--total         { background: #f1f5f9; color: #64748b; }
+
+[data-tema="oscuro"] .sigic-stats__pill--total { background: #1e293b; color: #64748b; }
+
+/* ── Leyenda ──────────────────────────────────────────────── */
+.sigic-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.sigic-leyenda--horizontal { flex-direction: row; justify-content: center; }
+.sigic-leyenda--vertical   { flex-direction: column; align-items: flex-start; }
+
+.sigic-leyenda__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sigic-leyenda__muestra {
+  width: 28px;
+  height: 32px;
+  pointer-events: none;
+  cursor: default;
+  flex-shrink: 0;
+  font-size: 0; /* hide texto, show icon */
+}
+.sigic-leyenda__muestra .sigic-seat__numero { display: none; }
+
+.sigic-leyenda__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sigic-leyenda__label {
+  font-family: var(--sigic-font);
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.sigic-leyenda__descripcion {
+  font-family: var(--sigic-font);
+  font-size: 10px;
+  font-weight: 400;
+  color: #94a3b8;
+  line-height: 1.3;
+}
+
+[data-tema="oscuro"] .sigic-leyenda__label        { color: #94a3b8; }
+[data-tema="oscuro"] .sigic-leyenda__descripcion  { color: #475569; }
+
+/* ── Badge Modo Solo Lectura ──────────────────────────────── */
+.sigic-badge-lectura {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sigic-font);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f59e0b;
+  background: rgba(245,158,11,0.08);
+  border: 1px solid rgba(245,158,11,0.18);
+  border-radius: 8px;
+  padding: 5px 12px;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .sigic-wrapper {
+    --sigic-seat-w:        30px;
+    --sigic-seat-h:        36px;
+    --sigic-radius-seat:   8px;
+    --sigic-gap-asientos:  4px;
+    --sigic-gap-filas:     6px;
+  }
+
+  .sigic-mapa {
+    padding: 20px 16px 24px;
+    border-radius: 18px;
+  }
+
+  .sigic-seat { font-size: 8px; }
+  .sigic-seat__numero { font-size: 6px; }
+
+  .sigic-stats { gap: 4px; }
+  .sigic-stats__pill { padding: 4px 8px; font-size: 10px; }
+  .sigic-stats__pill-label { display: none; } /* solo número en mobile */
+}
+
+@media (max-width: 400px) {
+  .sigic-wrapper {
+    --sigic-seat-w:       24px;
+    --sigic-seat-h:       28px;
+    --sigic-gap-asientos: 3px;
+    --sigic-gap-filas:    4px;
+  }
+}
+
+/* ── Reducir movimiento (accesibilidad) ───────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .sigic-wrapper,
+  .sigic-grilla,
+  .sigic-seat,
+  .sigic-seat--seleccionado {
+    animation: none !important;
+    transition: none !important;
+  }
+}
