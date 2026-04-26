@@ -1,6 +1,6 @@
 {
   "name": "@jcancelo/mapa-asientos-sigic",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Librería profesional y accesible para visualización interactiva de mapas de asientos en eventos institucionales.",
   "main": "dist/mapa-asientos.umd.js",
   "module": "dist/mapa-asientos.es.js",
@@ -38,6 +38,10 @@
     "type": "git",
     "url": "git+https://github.com/julianmcancelo/mapa-asientos-sigic.git"
   },
+  "bugs": {
+    "url": "https://github.com/julianmcancelo/mapa-asientos-sigic/issues"
+  },
+  "homepage": "https://github.com/julianmcancelo/mapa-asientos-sigic#readme",
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0",
