@@ -1,6 +1,6 @@
 {
   "name": "@jcancelo/mapa-asientos-sigic",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Librería profesional y accesible para visualización interactiva de mapas de asientos en eventos institucionales.",
   "main": "dist/mapa-asientos.umd.js",
   "module": "dist/mapa-asientos.es.js",
