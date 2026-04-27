@@ -1,6 +1,10 @@
 <div align="center">
   <img src="./encabezado.png" width="100%" alt="Encabezado SiGIC" />
 
+  <br />
+
+  <img src="./logo_sigic_oficial.png" width="350" alt="Logo SiGIC Oficial" />
+
   # Mapa de Asientos SiGIC
   **Tecnicatura Superior en Analista de Sistemas | Instituto Tecnológico Beltrán**
   
