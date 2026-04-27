@@ -1,44 +1,27 @@
 <div align="center">
   <img src="./encabezado.png" width="100%" alt="Encabezado SiGIC" />
 
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td align="center">
-        <br />
-        <img src="./logo_sigic_es.png" width="80" alt="Logo SiGIC" />
-        <h1>Mapa de Asientos SiGIC</h1>
-        <p><b>Tecnicatura Superior en Analista de Sistemas | Instituto Tecnológico Beltrán</b></p>
-        <p><i>Solución Profesional para la Gestión de Aforos y Protocolo Institucional</i></p>
-      </td>
-    </tr>
-  </table>
+  # Mapa de Asientos SiGIC
+  **Tecnicatura Superior en Analista de Sistemas | Instituto Tecnológico Beltrán**
+  
+  *Solución Profesional para la Gestión de Aforos y Protocolo Institucional*
 
-  <p align="center">
-    [![Versión NPM](https://img.shields.io/npm/v/@jcancelo/mapa-asientos-sigic?style=flat-square&color=2C3E50&label=VERSI%C3%93N)](https://www.npmjs.com/package/@jcancelo/mapa-asientos-sigic)
-    [![Licencia](https://img.shields.io/npm/l/@jcancelo/mapa-asientos-sigic?style=flat-square&color=16A085&label=LICENCIA)](https://github.com/julianmcancelo/mapa-asientos-sigic/blob/main/LICENSE)
-    [![Compatible con React](https://img.shields.io/badge/React-18%2B-2980B9?style=flat-square&logo=react&label=COMPATIBILIDAD)](https://react.dev/)
-  </p>
+  [![Versión NPM](https://img.shields.io/npm/v/@jcancelo/mapa-asientos-sigic?style=for-the-badge&color=2C3E50&label=VERSI%C3%93N)](https://www.npmjs.com/package/@jcancelo/mapa-asientos-sigic)
+  [![Licencia](https://img.shields.io/npm/l/@jcancelo/mapa-asientos-sigic?style=for-the-badge&color=16A085&label=LICENCIA)](https://github.com/julianmcancelo/mapa-asientos-sigic/blob/main/LICENSE)
+  [![Compatible con React](https://img.shields.io/badge/React-18%2B-2980B9?style=for-the-badge&logo=react&label=COMPATIBILIDAD)](https://react.dev/)
 
-  <nav>
-    <p align="center">
-      <a href="#-introducción-y-contexto">Introducción</a> •
-      <a href="#-análisis-de-la-problemática">Análisis Técnico</a> •
-      <a href="#-propuesta-de-solución-mapa-de-asientos-sigic">Propuesta</a> •
-      <a href="#-guía-de-implementación">Guía de Uso</a> •
-      <a href="#-referencia-de-la-api-documentación-técnica">API Reference</a>
-    </p>
-  </nav>
+  [Introducción](#introducción-y-contexto) • [Análisis](#análisis-de-la-problemática) • [Propuesta](#propuesta-de-solución-mapa-de-asientos-sigic) • [Guía de Uso](#guía-de-implementación) • [Documentación](#referencia-de-la-api-documentación-técnica)
 
   ---
 </div>
 
-## 📊 Introducción y Contexto
+## Introducción y Contexto
 
 Soy **Julian Cancelo**, estudiante de la **Tecnicatura Superior en Analista de Sistemas** y desarrollador en el **Instituto Tecnológico Beltrán**. 
 
 Este proyecto nace de la necesidad de estandarizar la gestión de espacios en el ecosistema **SiGIC (Sistema de Gestión Institucional de Ceremonias)**. Como futuro analista, mi enfoque no fue solo "escribir código", sino realizar un relevamiento profundo de las necesidades de las instituciones académicas al organizar eventos masivos, donde la precisión, el control de roles y la accesibilidad son requerimientos críticos.
 
-## 🔍 Análisis de la Problemática
+## Análisis de la Problemática
 
 En el desarrollo de sistemas institucionales, la gestión de asientos suele abordarse con soluciones genéricas que fallan en escenarios complejos. Durante mi análisis, identifiqué tres pilares fundamentales que esta librería debía resolver:
 
@@ -46,11 +29,11 @@ En el desarrollo de sistemas institucionales, la gestión de asientos suele abor
 2.  **Gestión de Roles Específicos**: En ceremonias académicas, un asiento no es solo "libre/ocupado". Necesitamos distinguir entre autoridades, egresados y personas con movilidad reducida.
 3.  **Brecha de Accesibilidad**: Garantizar que el sistema sea operable por cualquier usuario, cumpliendo con estándares internacionales (WCAG 2.1).
 
-## 🚀 Propuesta de Solución: Mapa de Asientos SiGIC
+## Propuesta de Solución: Mapa de Asientos SiGIC
 
 La solución propuesta es una librería de componentes React de alto rendimiento, diseñada bajo un paradigma de **estética premium y robustez técnica**. No es solo un mapa; es una herramienta de gestión de aforos con las siguientes características:
 
-### 🛠️ Arquitectura y Funcionalidades
+### Arquitectura y Funcionalidades
 - **Diseño Estructural Flexible**: Soporta configuraciones de filas y columnas dinámicas por sector.
 - **Motor de Roles Dinámico**: Sistema de tipado para asignar perfiles (Autoridades, Egresados, Prioritarios) con representación visual automática.
 - **Experiencia de Usuario (UX) Premium**: Interfaz basada en el diseño "Bento", con soporte para *Glassmorphism* y transiciones fluidas.
@@ -61,7 +44,7 @@ La solución propuesta es una librería de componentes React de alto rendimiento
 
 ---
 
-## 💻 Especificaciones Técnicas
+## Especificaciones Técnicas
 
 ### Requisitos de Entorno
 *   **Node.js**: 16.x o superior
@@ -81,7 +64,7 @@ import '@jcancelo/mapa-asientos-sigic/dist/style.css';
 
 ---
 
-## 📖 Guía de Implementación
+## Guía de Implementación
 
 A continuación, se presenta un caso de uso típico siguiendo los estándares de implementación analizados:
 
@@ -124,7 +107,7 @@ export default function GestionCeremonia() {
 
 ---
 
-## 📋 Referencia de la API (Documentación Técnica)
+## Referencia de la API (Documentación Técnica)
 
 | Atributo | Tipo | Descripción |
 | :--- | :--- | :--- |
@@ -136,7 +119,7 @@ export default function GestionCeremonia() {
 
 ---
 
-## 🤝 Contribución y Soporte
+## Contribución y Soporte
 
 Como parte de mi formación constante, este proyecto está abierto a retroalimentación técnica. Si encuentras un error o tienes una sugerencia sobre la lógica de negocio del mapa, por favor abre un **Issue** (Incidencia).
 
@@ -151,5 +134,6 @@ Como parte de mi formación constante, este proyecto está abierto a retroalimen
     <img src="https://img.shields.io/badge/Correo-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </div>
+
 
 
