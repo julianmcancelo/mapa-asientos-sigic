@@ -1,156 +1,155 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/armchair.svg" width="120" alt="Logo de Asientos" />
-  <h1>SiGIC Seating Map</h1>
-  <p><strong>Una experiencia premium, interactiva y accesible para la gestión de anfiteatros institucionales.</strong></p>
+  <img src="./encabezado.png" width="100%" alt="Encabezado SiGIC" />
 
-  [![NPM Version](https://img.shields.io/npm/v/@jcancelo/mapa-asientos-sigic?style=for-the-badge&color=800020)](https://www.npmjs.com/package/@jcancelo/mapa-asientos-sigic)
-  [![License](https://img.shields.io/npm/l/@jcancelo/mapa-asientos-sigic?style=for-the-badge&color=10b981)](https://github.com/julianmcancelo/mapa-asientos-sigic/blob/main/LICENSE)
-  [![React Compatible](https://img.shields.io/badge/React-18%2B-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center">
+        <br />
+        <img src="./logo_sigic_es.png" width="80" alt="Logo SiGIC" />
+        <h1>Mapa de Asientos SiGIC</h1>
+        <p><b>Tecnicatura Superior en Analista de Sistemas | Instituto Tecnológico Beltrán</b></p>
+        <p><i>Solución Profesional para la Gestión de Aforos y Protocolo Institucional</i></p>
+      </td>
+    </tr>
+  </table>
 
-  <p>
-    <a href="#sobre-el-proyecto">Sobre el Proyecto</a> •
-    <a href="#características">Características</a> •
-    <a href="#instalación">Instalación</a> •
-    <a href="#demo">Demo</a> •
-    <a href="#guía-rápida">Uso</a>
+  <p align="center">
+    [![Versión NPM](https://img.shields.io/npm/v/@jcancelo/mapa-asientos-sigic?style=flat-square&color=2C3E50&label=VERSI%C3%93N)](https://www.npmjs.com/package/@jcancelo/mapa-asientos-sigic)
+    [![Licencia](https://img.shields.io/npm/l/@jcancelo/mapa-asientos-sigic?style=flat-square&color=16A085&label=LICENCIA)](https://github.com/julianmcancelo/mapa-asientos-sigic/blob/main/LICENSE)
+    [![Compatible con React](https://img.shields.io/badge/React-18%2B-2980B9?style=flat-square&logo=react&label=COMPATIBILIDAD)](https://react.dev/)
   </p>
+
+  <nav>
+    <p align="center">
+      <a href="#-introducción-y-contexto">Introducción</a> •
+      <a href="#-análisis-de-la-problemática">Análisis Técnico</a> •
+      <a href="#-propuesta-de-solución-mapa-de-asientos-sigic">Propuesta</a> •
+      <a href="#-guía-de-implementación">Guía de Uso</a> •
+      <a href="#-referencia-de-la-api-documentación-técnica">API Reference</a>
+    </p>
+  </nav>
+
+  ---
 </div>
 
+## 📊 Introducción y Contexto
+
+Soy **Julian Cancelo**, estudiante de la **Tecnicatura Superior en Analista de Sistemas** y desarrollador en el **Instituto Tecnológico Beltrán**. 
+
+Este proyecto nace de la necesidad de estandarizar la gestión de espacios en el ecosistema **SiGIC (Sistema de Gestión Institucional de Ceremonias)**. Como futuro analista, mi enfoque no fue solo "escribir código", sino realizar un relevamiento profundo de las necesidades de las instituciones académicas al organizar eventos masivos, donde la precisión, el control de roles y la accesibilidad son requerimientos críticos.
+
+## 🔍 Análisis de la Problemática
+
+En el desarrollo de sistemas institucionales, la gestión de asientos suele abordarse con soluciones genéricas que fallan en escenarios complejos. Durante mi análisis, identifiqué tres pilares fundamentales que esta librería debía resolver:
+
+1.  **Complejidad Arquitectónica**: La necesidad de representar múltiples niveles (Plateas, Palcos) sin perder la simplicidad técnica.
+2.  **Gestión de Roles Específicos**: En ceremonias académicas, un asiento no es solo "libre/ocupado". Necesitamos distinguir entre autoridades, egresados y personas con movilidad reducida.
+3.  **Brecha de Accesibilidad**: Garantizar que el sistema sea operable por cualquier usuario, cumpliendo con estándares internacionales (WCAG 2.1).
+
+## 🚀 Propuesta de Solución: Mapa de Asientos SiGIC
+
+La solución propuesta es una librería de componentes React de alto rendimiento, diseñada bajo un paradigma de **estética premium y robustez técnica**. No es solo un mapa; es una herramienta de gestión de aforos con las siguientes características:
+
+### 🛠️ Arquitectura y Funcionalidades
+- **Diseño Estructural Flexible**: Soporta configuraciones de filas y columnas dinámicas por sector.
+- **Motor de Roles Dinámico**: Sistema de tipado para asignar perfiles (Autoridades, Egresados, Prioritarios) con representación visual automática.
+- **Experiencia de Usuario (UX) Premium**: Interfaz basada en el diseño "Bento", con soporte para *Glassmorphism* y transiciones fluidas.
+- **Interoperabilidad**: Compatible con arquitecturas modernas de frontend, permitiendo una integración limpia en minutos.
+- **Modos de Operación**:
+    - **Interactivo**: Para selección y reserva de lugares.
+    - **Monitoreo**: Modo "Solo Lectura" optimizado para pantallas de control de acceso.
+
 ---
 
-## Sobre el Proyecto
+## 💻 Especificaciones Técnicas
 
-Soy **Julian Cancelo**, desarrollador e investigador en el **Instituto Tecnológico Beltrán**. 
+### Requisitos de Entorno
+*   **Node.js**: 16.x o superior
+*   **React**: 18.x (optimizado para Modo Concurrente)
+*   **Dependencias**: `lucide-react` para iconografía técnica.
 
-Actualmente cursando/egresado de la carrera **Tecnicatura Superior en Desarrollo de Software** y la **Tecnicatura Superior en Analista de Sistemas**.
-
-Desarrollé esta librería como parte del ecosistema **SiGIC (Sistema de Gestión Institucional de Ceremonias)** en 2026. Mi objetivo principal fue resolver un problema complejo: crear un mapa interactivo de asientos que no solo fuera visualmente deslumbrante y "premium", sino que también fuera **100% accesible** (WCAG 2.1) y extremadamente fácil de integrar para otros desarrolladores.
-
-A diferencia de otras librerías genéricas, este mapa está diseñado pensando en **eventos académicos y protocolares**: maneja múltiples pisos, asignación de roles (autoridades, egresados, personas con movilidad reducida) y soporta navegación nativa por teclado.
-
----
-
-## Características
-
-- **Estética Premium**: Diseño estilo "Bento", soporte nativo para Modo Claro/Oscuro y animaciones fluidas (glassmorphism).
-- **Accesibilidad Total (WCAG 2.1)**: Soporte completo para navegación por teclado (flechas) y soporte para lectores de pantalla.
-- **Arquitectura Multinivel**: Soporta visualización de plateas bajas, palcos altos o cualquier estructura personalizada.
-- **Controles de Zoom**: Pan & Zoom integrados para anfiteatros masivos.
-- **Gestión de Roles**: Colores e íconos automáticos para *Egresados, Autoridades, Discapacitados, Reservados y Disponibles*.
-- **Seguridad por Diseño**: Modo "Solo Lectura" ideal para pantallas de monitoreo en la portería o entrada del evento.
-
----
-
-## Instalación
-
-La librería requiere `react`, `react-dom` y `lucide-react` (para su iconografía moderna).
-
+### Instalación
 ```bash
 npm install @jcancelo/mapa-asientos-sigic lucide-react
 ```
 
-### Importación del Diseño Base
-Para que el motor de CSS inyecte el diseño premium, debes importar la hoja de estilos en tu archivo principal (`main.jsx`, `App.jsx` o `_app.js` si usas Next.js):
-
+### Inyección de Estilos
+Para garantizar la integridad visual de alta gama, se debe importar el núcleo de estilos en el punto de entrada de la aplicación:
 ```javascript
 import '@jcancelo/mapa-asientos-sigic/dist/style.css';
 ```
 
 ---
 
-## Demo
+## 📖 Guía de Implementación
 
-Prueba la librería en vivo directamente desde tu navegador:
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/asientos-gestor)
-
----
-
-## Guía Rápida
-
-Aquí tienes el ejemplo mínimo para renderizar tu primer anfiteatro:
+A continuación, se presenta un caso de uso típico siguiendo los estándares de implementación analizados:
 
 ```javascript
 import { useState } from 'react';
 import { MapaAsientos, LeyendaAsientos } from '@jcancelo/mapa-asientos-sigic';
 
-export default function MiCeremonia() {
-  const [seleccionados, setSeleccionados] = useState([]);
+export default function GestionCeremonia() {
+  const [seleccion, setSeleccion] = useState([]);
 
-  // 1. Definimos la estructura física de nuestro teatro
-  const arquitectura = {
-    baja: { filas: 8, asientos: 16 },
-    alta: { filas: 5, asientos: 12 },
+  // Definición lógica de la arquitectura del teatro
+  const teatroBeltran = {
+    plateaBaja: { filas: 10, asientos: 20 },
+    plateaAlta: { filas: 6, asientos: 15 },
   };
 
-  // 2. Asignamos asientos a perfiles específicos
-  const distribucionRoles = {
-    'baja-A-1': 'autoridad',
-    'baja-A-2': 'autoridad',
-    'baja-C-5': 'egresado',
-    'baja-D-3': 'discapacitado', // Visualización con ícono de prioridad
-  };
-
-  const manejarSeleccion = (idAsiento) => {
-    // Lógica simple de toggle para selección múltiple
-    setSeleccionados((prev) => 
-      prev.includes(idAsiento) 
-        ? prev.filter(id => id !== idAsiento)
-        : [...prev, idAsiento]
-    );
+  // Mapeo de roles según relevamiento protocolar
+  const rolesProtocolo = {
+    'plateaBaja-A-1': 'autoridad',
+    'plateaBaja-E-5': 'discapacitado', // Prioridad visual
+    'plateaAlta-B-2': 'egresado',
   };
 
   return (
-    <div style={{ padding: '2rem', background: '#0f0f0f' }}>
-      <h1 style={{ color: 'white' }}>Gestor de Asientos</h1>
-      
-      {/* Componente principal del mapa */}
+    <main className="sigic-container">
       <MapaAsientos
-        estructura={arquitectura}
-        mapaRoles={distribucionRoles}
-        seleccionados={seleccionados}
-        alHacerClick={manejarSeleccion}
+        estructura={teatroBeltran}
+        mapaRoles={rolesProtocolo}
+        seleccionados={seleccion}
+        alHacerClick={(id) => setSeleccion([...seleccion, id])}
         tema="oscuro"
         mostrarControlesZoom={true}
-        maxSeleccionados={4} // Limita a 4 tickets por invitado
+        maxSeleccionados={5}
       />
-
-      {/* Leyenda explicativa automática */}
-      <div style={{ marginTop: '2rem' }}>
-        <LeyendaAsientos orientacion="horizontal" />
-      </div>
-    </div>
+      <LeyendaAsientos orientacion="horizontal" />
+    </main>
   );
 }
 ```
 
 ---
 
-## API de Componentes
+## 📋 Referencia de la API (Documentación Técnica)
 
-### `<MapaAsientos />`
-
-| Propiedad | Tipo | Por Defecto | Descripción |
-| :--- | :--- | :--- | :--- |
-| **`estructura`** | `Object` | *Req* | Define los pisos y dimensiones: `{ baja: { filas: 8, asientos: 16 } }` |
-| **`mapaRoles`** | `Object` | `{}` | Diccionario de IDs y su rol (`{'baja-A-1': 'egresado'}`) |
-| **`seleccionados`** | `String[]`| `[]` | Array con los IDs que el usuario marcó. |
-| **`alHacerClick`** | `Function` | `null` | Función que recibe el `id` clickeado. |
-| **`tema`** | `String` | `'claro'` | `'claro'` o `'oscuro'`. |
-| **`modoVisualizacion`**| `Boolean`| `false` | Actívalo para pantallas de solo-lectura (ej. monitoreo de entradas). |
-| **`maxSeleccionados`** | `Number` | `null` | Límite máximo de asientos que se pueden seleccionar. |
-| **`mostrarEstadisticas`**| `Boolean`| `true` | Muestra la barra de resumen en tiempo real. |
+| Atributo | Tipo | Descripción |
+| :--- | :--- | :--- |
+| `estructura` | `Object` | Define sectores, filas y asientos. Clave para la escalabilidad. |
+| `mapaRoles` | `Object` | Diccionario de IDs vinculados a un rol de protocolo. |
+| `tema` | `'claro' \| 'oscuro'` | Selector de interfaz para adaptabilidad de entorno. |
+| `modoVisualizacion` | `Boolean` | Desactiva interacciones para uso en paneles de monitoreo. |
+| `maxSeleccionados` | `Number` | Restricción lógica de negocio para límites de reserva. |
 
 ---
 
-## Contribuir y Soporte
+## 🤝 Contribución y Soporte
 
-Si estás desarrollando en el Instituto Beltrán o simplemente integraste esta herramienta en tu proyecto y tienes dudas, siéntete libre de abrir un **Issue** en el repositorio.
+Como parte de mi formación constante, este proyecto está abierto a retroalimentación técnica. Si encuentras un error o tienes una sugerencia sobre la lógica de negocio del mapa, por favor abre un **Issue** (Incidencia).
 
-Desarrollado por **Julian Cancelo**.
+**Desarrollado con enfoque analítico por Julian Cancelo.**
 
 <div align="center">
   <br />
-  <a href="https://github.com/julianmcancelo">GitHub</a> • 
-  <a href="mailto:jcancelo.dev@gmail.com">jcancelo.dev@gmail.com</a>
+  <a href="https://github.com/julianmcancelo">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="mailto:jcancelo.dev@gmail.com">
+    <img src="https://img.shields.io/badge/Correo-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
 </div>
+
+
